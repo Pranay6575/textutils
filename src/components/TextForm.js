@@ -8,22 +8,38 @@ export default function TextForm(props) {
         let upperText = text.toUpperCase();
         setText(upperText);
     }
+
+    const handlelowClick =()=>{
+        
+        let lowertext = text.toLowerCase();
+        setText(lowertext);
+    }
     const handleonChange =(ev)=>{
         setText(ev.target.value)
         console.log("handleonChange !")
     }
-    const [text, setText] = useState("Enter Text here")
+    const [text, setText] = useState("")
     // text = "Update Text here" // Wrong way to change the state
     // setText("Update Text here") // Correct  way to change the state
     return (
-        <div>
-
+        <>
+        <div className = 'container'>
             <h1>{props.heading}</h1>
             <div className="mb-3">
                 <textarea className="form-control" value = {text} onChange={handleonChange} id="myText" rows="6"></textarea>
             </div>
-            <button className="btn btn-secondary" onClick={handleClick}>Convert to Upper Case</button>
-
+            <button className="btn btn-secondary mx-2" onClick={handleClick}>Convert to Upper Case</button>
+            <button className="btn btn-primary mx-2" onClick={handlelowClick}>Convert to Lower Case</button>
         </div>
+
+        <div className="container mt-5" >
+        <h1>New Text Summary Here</h1>
+        <h5>{text.split(" ").length} words and {text.length} characters</h5>
+        <p>Words can read in {0.008 * text.split(" ").length} Minutes</p> 
+        <h3>Preview:- </h3>
+        <p>{text}</p>  
+        </div>
+
+        </>
     )
 }
