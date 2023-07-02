@@ -14,7 +14,7 @@ export default function Navbar(props) {
           <a className="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/">{props.aboutText}</a>
+          <a className="nav-link" href="/">About</a>
         </li>
       </ul>
     </div>
@@ -23,8 +23,8 @@ export default function Navbar(props) {
   )
 }
 
-Navbar.defaultProps ={
-    title: 'Set your title',
-    aboutText: 'Microsoft'
+// Navbar.defaultProps ={
+//     title: 'Set your title',
+//     aboutText: 'Microsoft'
 
-}
+// }
