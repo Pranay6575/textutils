@@ -14,9 +14,15 @@ export default function TextForm(props) {
         let lowertext = text.toLowerCase();
         setText(lowertext);
     }
+
+    const handlegreetClick =()=>{
+
+        let text = "Thanks for Writing and Reading !";
+        setText(text);
+    }
     const handleonChange =(ev)=>{
         setText(ev.target.value)
-        console.log("handleonChange !")
+        // console.log("handleonChange !")
     }
     const [text, setText] = useState("")
     // text = "Update Text here" // Wrong way to change the state
@@ -30,6 +36,7 @@ export default function TextForm(props) {
             </div>
             <button className="btn btn-secondary mx-2" onClick={handleClick}>Convert to Upper Case</button>
             <button className="btn btn-primary mx-2" onClick={handlelowClick}>Convert to Lower Case</button>
+            <button className="btn btn-success mx-2" onClick={handlegreetClick}>Click for Greet</button>
         </div>
 
         <div className="container mt-5" >
