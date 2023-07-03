@@ -1,10 +1,34 @@
 import React from "react";
+import { useState } from "react";
 
-let myStyle = {
-    color: 'white',
-    backgroundColor: 'black'
-}
+
 export default function About() {
+
+const [myStyle, setMyStyle] = useState({
+  color: 'black',
+  backgroundColor: 'white'
+})
+
+const [btnText , setBtnText] = useState("")
+
+const toggleBtn = ()=>{
+  if(myStyle.color === 'black'){
+    setMyStyle({
+      color: 'white',
+      backgroundColor: 'black'
+    })
+    setBtnText("Enable Light mode")
+  }
+  else{
+    setMyStyle({
+      color: 'black',
+      backgroundColor: 'white'
+    })
+    setBtnText("Enable Dark mode")
+  }
+  }
+
+
   return (
     <div className="container" style={myStyle}>
         <h1>About Us</h1>
@@ -13,6 +37,7 @@ export default function About() {
           <h2 className="accordion-header">
             <button
               className="accordion-button"
+              style={myStyle}
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseOne"
@@ -27,7 +52,7 @@ export default function About() {
             className="accordion-collapse collapse show"
             data-bs-parent="#accordionExample"
           >
-            <div className="accordion-body">
+            <div className="accordion-body" style={myStyle}>
               <strong>This is the first item's accordion body.</strong> It is
               shown by default, until the collapse plugin adds the appropriate
               classNamees that we use to style each element. These classNamees
@@ -43,6 +68,7 @@ export default function About() {
           <h2 className="accordion-header">
             <button
               className="accordion-button collapsed"
+              style={myStyle}
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseTwo"
@@ -57,7 +83,7 @@ export default function About() {
             className="accordion-collapse collapse"
             data-bs-parent="#accordionExample"
           >
-            <div className="accordion-body">
+            <div className="accordion-body" style={myStyle}>
               <strong>This is the second item's accordion body.</strong> It is
               hidden by default, until the collapse plugin adds the appropriate
               classNamees that we use to style each element. These classNamees
@@ -73,6 +99,7 @@ export default function About() {
           <h2 className="accordion-header">
             <button
               className="accordion-button collapsed"
+              style={myStyle}
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseThree"
@@ -87,7 +114,7 @@ export default function About() {
             className="accordion-collapse collapse"
             data-bs-parent="#accordionExample"
           >
-            <div className="accordion-body">
+            <div className="accordion-body" style={myStyle}>
               <strong>This is the third item's accordion body.</strong> It is
               hidden by default, until the collapse plugin adds the appropriate
               classNamees that we use to style each element. These classNamees
@@ -101,7 +128,7 @@ export default function About() {
         </div>
       </div>
       <div className="container my-3">
-      <button className="btn btn-dark">Turn Dark Mode</button>
+      <button className="btn btn-dark" onClick={toggleBtn}>{btnText}</button>
       </div>
     </div>
   );
