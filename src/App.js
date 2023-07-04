@@ -24,11 +24,19 @@ function App() {
     setMode('dark')
     document.body.style.backgroundColor = 'grey'
     showAlert("Dark mode has been eneabled", 'success')
+    document.title = "Textutils- Dark mode"
+    // setInterval(()=>{
+    //   document.title = "Textutils- is the best App"
+    // },3000);
+    // setInterval(()=>{
+    //   document.title = "Download Testutils NOW !"
+    // },1500);
   }
   else{
     setMode('light')
     document.body.style.backgroundColor = 'white'
     showAlert("Light mode has been eneabled", 'success')
+    document.title = "Textutils- Light mode"
   }
  }
   return (
