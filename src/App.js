@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import React, { useState } from 'react';
 import TextForm from "./components/TextForm";
 import Alert from "./components/Alert";
+import { Link, Route, Routes } from 'react-router-dom';
 
 
 function App() {
@@ -44,8 +45,13 @@ function App() {
       <Navbar title = "TextUtils" mode={mode} toggleMode={toggleMode}/>
       <Alert alert={alert}/>
       <div className="container"> 
-      <TextForm  heading= 'Enter your Thoughts' mode={mode}/>
-      {/* <About /> */}
+      <Routes>
+      <Route exact path="/" element={<TextForm  heading= 'Enter your Thoughts' mode={mode}/>} />
+      <Route exact path="/About" element={<About />} />
+      </Routes>
+      
+      
+      
       </div>
     </>
   );

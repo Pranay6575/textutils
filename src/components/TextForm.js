@@ -46,7 +46,7 @@ export default function TextForm(props) {
         <h3>Preview:- </h3>
         <p>{text.length>0?text:'Write Something above to Preview here'}</p>  
         </div>
-
+        
         </>
     )
 }

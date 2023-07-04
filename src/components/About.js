@@ -30,6 +30,9 @@ const toggleBtn = ()=>{
 
 
   return (
+
+
+    
     <div className="container" style={myStyle}>
         <h1>About Us</h1>
       <div className="accordion" id="accordionExample" style={myStyle}>
@@ -131,5 +134,7 @@ const toggleBtn = ()=>{
       <button className="btn btn-dark" onClick={toggleBtn}>{btnText}</button>
       </div>
     </div>
+
+    
   );
 }
